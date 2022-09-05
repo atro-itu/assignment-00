@@ -4,6 +4,7 @@ public class Calendar
 {
   public bool IsLeapYear(int year)
   {
+    if (year < 1582) throw new ArgumentException("Invalid year. Must be greater than 1582");
     if (year % 4 != 0) return false;
     if (year % 100 == 0 && year % 400 != 0) return false;
 

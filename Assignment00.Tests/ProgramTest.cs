@@ -51,7 +51,7 @@ public class ProgramTest
   {
     using (var mockOutput = new StringWriter())
     {
-      using (var mockInput = new StringReader("0"))
+      using (var mockInput = new StringReader("1581"))
       {
         Console.SetOut(mockOutput);
         Console.SetIn(mockInput);

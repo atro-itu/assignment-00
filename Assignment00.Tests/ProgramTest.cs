@@ -64,4 +64,23 @@ public class ProgramTest
       }
     }
   }
+
+  [Fact]
+  public void Main_when_given_malformed_input_prints_error()
+  {
+    using (var mockOutput = new StringWriter())
+    {
+      using (var mockInput = new StringReader("🐛"))
+      {
+        Console.SetOut(mockOutput);
+        Console.SetIn(mockInput);
+
+        var program = Assembly.Load(nameof(Assignment00));
+        program.EntryPoint?.Invoke(null, new[] { Array.Empty<string>() });
+
+        var result = mockOutput.ToString();
+        result.Should().Contain("Input string was not in a correct format.");
+      }
+    }
+  }
 }

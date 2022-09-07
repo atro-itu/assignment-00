@@ -62,7 +62,7 @@ public class CalendarTest
 
     Action invalidAction = () => calendar.IsLeapYear(0);
 
-    invalidAction.Should().Throw<ArgumentException>()
+    invalidAction.Should().Throw<NotSupportedException>()
                           .WithMessage("Invalid year. Must be 1582 or greater.");
 
   }

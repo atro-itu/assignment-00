@@ -1,7 +1,7 @@
 ```mermaid
 flowchart TD
     A[Start] --> B{Is year less than 1582?}
-    B -- Yes --> C[Throw ArgumentException]
+    B -- Yes --> C[Throw NotSupportedException]
     B -- No --> D{Is year divisible by 4?}
 		D -- No --> E[Guard clause returns false]
 		D -- Yes --> F{Is year divisible by 100?}
